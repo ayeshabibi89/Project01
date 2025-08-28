@@ -123,8 +123,6 @@
 </head>
 <body >
   
-    <!-- Header/Navigation -->
- 
 <header class="fixed top-0 left-0 w-full bg-gray-100 dark:bg-gray-900 shadow-md z-50">
   <div class="container mx-auto flex items-center justify-between px-6 py-3">
     
@@ -132,30 +130,54 @@
     <div class="flex items-center gap-4">
       <img src="aishlogo.webp" alt="Logo" class="w-14 h-14 object-contain">
       <a href="mailto:ayeshabibiayesha8900@gmail.com" 
-         class="text-sm text-gray-700 dark:text-gray-300 hover:text-blue-500">
+         class="hidden sm:block text-sm text-gray-700 dark:text-gray-300 hover:text-blue-500">
         ayeshabibiayesha8900@gmail.com
       </a>
     </div>
 
+    <!-- Mobile Menu Button -->
+    <button id="menu-btn" class="md:hidden text-gray-700 dark:text-gray-300 focus:outline-none">
+      <!-- Hamburger Icon -->
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+
     <!-- Right Side: Navigation -->
-    <nav>
-      <ul class="flex space-x-6 text-gray-700 dark:text-gray-300 font-medium">
-        <li><a href="#services" class="hover:text-blue-500">Services</a></li>
-        <li><a href="#portfolio" class="hover:text-blue-500">Portfolio</a></li>
-        <li><a href="#experience" class="hover:text-blue-500">Experience</a></li>
-        <li><a href="#skills" class="hover:text-blue-500">Skills</a></li>
-        <li><a href="#testimonials" class="hover:text-blue-500">Testimonials</a></li>
-        <li><a href="#resume" class="hover:text-blue-500">Resume</a></li>
-        <li><a href="#works" class="hover:text-blue-500">Works</a></li>
-        <li><a href="#home" class="hover:text-blue-500">Home</a></li>
-        <li><a href="#blogs" class="hover:text-blue-500">Blogs</a></li>
-        <a href="#contact" class="border border-primary text-primary px-3 py-2 rounded-md hover:bg-[#170C24] transition">Hire Me</a>
+    <nav id="menu" class="hidden md:block">
+      <ul class="flex flex-col md:flex-row md:space-x-6 text-gray-700 dark:text-gray-300 font-medium">
+        <li><a href="#services" class="hover:text-blue-500 block py-2">Services</a></li>
+        <li><a href="#portfolio" class="hover:text-blue-500 block py-2">Portfolio</a></li>
+        <li><a href="#experience" class="hover:text-blue-500 block py-2">Experience</a></li>
+        <li><a href="#skills" class="hover:text-blue-500 block py-2">Skills</a></li>
+        <li><a href="#testimonials" class="hover:text-blue-500 block py-2">Testimonials</a></li>
+        <li><a href="#resume" class="hover:text-blue-500 block py-2">Resume</a></li>
+        <li><a href="#works" class="hover:text-blue-500 block py-2">Works</a></li>
+        <li><a href="#home" class="hover:text-blue-500 block py-2">Home</a></li>
+        <li><a href="#blogs" class="hover:text-blue-500 block py-2">Blogs</a></li>
+        <li>
+          <a href="#contact" 
+             class="border border-primary text-primary px-3 py-2 rounded-md hover:bg-[#170C24] transition block text-center">
+            Hire Me
+          </a>
+        </li>
       </ul>
-      
     </nav>
 
   </div>
 </header>
+
+<script>
+  // Toggle mobile menu
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
   <button id="theme-toggle" 
         class="fixed top-20 right-2 px-4 py-2 rounded bg-gray-800 text-white shadow text-xl z-50">
   🌙
@@ -1088,4 +1110,5 @@
     
 </body>
 </html>
+
 
