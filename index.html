@@ -27,6 +27,7 @@
         }
     </script>
     <style>
+      
  /* Light Theme Defaults */
     .theme-light {
       --section-hero: #f0f9ff;   /* light blue */
@@ -42,12 +43,12 @@
     /* Dark Theme */
     .theme-dark {
       --section-hero: #1e293b;    
-      --section-services: #0f172a; 
-      --section-works: #1e3a8a;   
-      --section-experience: #312e81;
+      --section-services: #1e293b; 
+      --section-works: #1e293b;   
+      --section-experience: #1e293b;
       --section-skills: #1e293b; 
-      --section-testimonials: #2e1065;
-      --section-blogs: #111827;
+      --section-testimonials: #1e293b;
+      --section-blogs: #1e293b;
       --text-color: #f8fafc;
     }
 
@@ -120,88 +121,156 @@
         }
     </style>
 </head>
-<body>
+<body >
   
     <!-- Header/Navigation -->
  
-<header class="fixed w-full bg-gray-300 shadow-md z-40">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center mr-6">
-      <div class="w-20">
-      <img src="aishlogo.webp"></div>
-      <a href="#" class="text-primary">ayeshabibiayesha<br>8900@gmail.com</a>
-      <nav class="hidden sm:flex space-x-9 items-center">
-        <a href="#services" class="hover:text-primary transition ml-3">Services</a>
-        <a href="#portfolio" class="hover:text-primary transition">Portfolio</a>
-        <a href="#experience" class="hover:text-primary transition">Experience</a>
-        <a href="#skills" class="hover:text-primary transition">Skills</a>
-        <a href="#testimonials" class="hover:text-primary transition">Testimonials</a>
-        <a href="#Resumes" class="hover:text-primary transition">Resumes</a>
-        <a href="#works" class="hover:text-primary transition">Works</a>
-        <a href="#home" class="hover:text-primary transition">Home</a>
-          <a href="#blogs" class="hover:text-primary transition">Blogs</a>
-      </nav>
-      <a href="#Hire me" class="border border-primary text-primary px-6 py-3 rounded-md hover:bg-blue-50 transition hidden md:block ml-6">Hire Me!</a>
+<header class="fixed top-0 left-0 w-full bg-gray-100 dark:bg-gray-900 shadow-md z-50">
+  <div class="container mx-auto flex items-center justify-between px-6 py-3">
+    
+    <!-- Left Side: Logo + Email -->
+    <div class="flex items-center gap-4">
+      <img src="aishlogo.webp" alt="Logo" class="w-14 h-14 object-contain">
+      <a href="mailto:ayeshabibiayesha8900@gmail.com" 
+         class="text-sm text-gray-700 dark:text-gray-300 hover:text-blue-500">
+        ayeshabibiayesha8900@gmail.com
+      </a>
     </div>
-  </header>
+
+    <!-- Right Side: Navigation -->
+    <nav>
+      <ul class="flex space-x-6 text-gray-700 dark:text-gray-300 font-medium">
+        <li><a href="#services" class="hover:text-blue-500">Services</a></li>
+        <li><a href="#portfolio" class="hover:text-blue-500">Portfolio</a></li>
+        <li><a href="#experience" class="hover:text-blue-500">Experience</a></li>
+        <li><a href="#skills" class="hover:text-blue-500">Skills</a></li>
+        <li><a href="#testimonials" class="hover:text-blue-500">Testimonials</a></li>
+        <li><a href="#resume" class="hover:text-blue-500">Resume</a></li>
+        <li><a href="#works" class="hover:text-blue-500">Works</a></li>
+        <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+        <li><a href="#blogs" class="hover:text-blue-500">Blogs</a></li>
+        <a href="#contact" class="border border-primary text-primary px-3 py-2 rounded-md hover:bg-[#170C24] transition">Hire Me</a>
+      </ul>
+      
+    </nav>
+
+  </div>
+</header>
   <button id="theme-toggle" 
         class="fixed top-20 right-2 px-4 py-2 rounded bg-gray-800 text-white shadow text-xl z-50">
   🌙
 </button>
     <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-20 bg-gradient-to-r from-blue-50 to-indigo-50">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <h4 class="text-primary font-semibold mb-2 text-4xl" >I am Ayesha</h4>
-                <h3 class="text-6xl text-secondary mb-6 font-merriweather font-bold">Next-Level Web Developer</h3>
-                <p class="text-secondary mb-8 max-w-md font-bold text-1xl">I break down complex user experience problems to create integrity focussed solutions that connect billions of people.</p>
-                <div class="flex space-x-4">
-                    <a href="#portfolio" class="bg-primary text-white px-6 py-3 rounded-md hover:bg-blue-600 transition" onclick="downloadFile('MyCV.pdf')"">Download CV </a>
-                </div>
-                 <h1 class="absolute inset-0 flex items-center  justify-center text-[15rem] font-bold text-purple-100 opacity-1600 pointer-events-none select-none">
-    HI
-  </h1>
-            </div>
-            <div class="image-container max-w-[20%]">
-              <img src="aish.jpg" alt="my image">
-            </div>
-            </div>
-            <style>
-            .image-container img {
-              border: 5px solid #fff;
-              transform: rotate(5deg);
-              transition: transform 0.3s ease-in-out;
-            }
-            
-            .image-container img:hover {
-              transform: rotate(0deg) scale(1.1);
-              box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            }</style>
-    </section>
-
-
-    <section class="pb-20 bg-gradient-to-r from-blue-50 to-indigo-50">
-      <div class="md:w-full flex justify-center bg-green-200">
-        <div class="grid grid-cols-4 gap-4">
-          <div class="bg-white p-6 rounded-lg shadow-md text-center hover-animate">
-            <span class="text-4xl font-bold text-primary">14+</span>
-            <p class="text-secondary mt-2">Years of Experience</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md text-center hover-animate delay-100">
-            <span class="text-4xl font-bold text-primary">50+</span>
-            <p class="text-secondary mt-2">Projects Completed</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md text-center hover-animate delay-200">
-            <span class="text-4xl font-bold text-primary">1.5K</span>
-            <p class="text-secondary mt-2">Happy Clients</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md text-center hover-animate delay-300">
-            <span class="text-4xl font-bold text-primary">100%</span>
-            <p class="text-secondary mt-2">Satisfaction Rate</p>
-          </div>
+   <section id="home" class="pt-32 pb-20  dark:from-gray-900 dark:to-gray-800">
+  <div class="max-w-7xl mx-auto px-6">
+    
+    <!-- Hero Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      
+      <!-- Left: Text -->
+      <div class="relative z-10 text-center md:text-left">
+        <h4 class="text-primary font-semibold mb-2 text-4xl">I am Ayesha</h4>
+        <h3 class="text-6xl text-secondary mb-6 font-merriweather font-bold">Next-Level Web Developer</h3>
+        <p class="text-secondary mb-8 max-w-md mx-auto md:mx-0 font-bold text-lg">
+          I break down complex user experience problems to create integrity focussed solutions 
+          that connect billions of people.
+        </p>
+        <div class="flex justify-center md:justify-start space-x-4">
+          <a href="#portfolio" 
+             class="bg-primary text-white px-6 py-3 rounded-md hover:bg-blue-600 transition" 
+             onclick="downloadFile('MyCV.pdf')">Download CV</a>
         </div>
       </div>
-    </section>
-    <style>
+
+      <!-- Right: Image -->
+      <div class="flex justify-center md:justify-end">
+        <div class="w-48 aspect-square overflow-hidden rounded-xl shadow-lg">
+          <img src="aish.jpg" alt="my image" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+
+    <!-- Background HI text -->
+    <h1 class="absolute inset-0 flex items-center justify-center text-[15rem] font-bold 
+               text-purple-400 opacity-20 select-none pointer-events-none animate-spin-slow">
+      HI
+    </h1>
+
+    <!-- Stats Section -->
+    <div class="pt-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        
+        <!-- Card 1 -->
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md text-center hover:scale-105 transition delay-100">
+          <div class="w-12 h-12 mx-auto flex items-center justify-center rounded-full 
+                      bg-green-100 dark:bg-green-700 text-green-600 dark:text-green-200 mb-3">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <span class="text-4xl font-bold text-primary">14+</span>
+          <p class="text-secondary mt-2">Years of Experience</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md text-center hover:scale-105 transition delay-100">
+          <div class="w-12 h-12 mx-auto flex items-center justify-center rounded-full 
+                      bg-green-100 dark:bg-green-700 text-green-600 dark:text-green-200 mb-3">
+            <i class="fas fa-tasks"></i>
+          </div>
+          <span class="text-4xl font-bold text-primary">50+</span>
+          <p class="text-secondary mt-2">Projects Completed</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md text-center hover:scale-105 transition delay-200">
+          <div class="w-12 h-12 mx-auto flex items-center justify-center rounded-full 
+                      bg-yellow-100 dark:bg-yellow-700 text-yellow-600 dark:text-yellow-200 mb-3">
+            <i class="fas fa-users"></i>
+          </div>
+          <span class="text-4xl font-bold text-primary">1.5K</span>
+          <p class="text-secondary mt-2">Happy Clients</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md text-center hover:scale-105 transition delay-300">
+          <div class="w-12 h-12 mx-auto flex items-center justify-center rounded-full 
+                      bg-purple-100 dark:bg-purple-700 text-purple-600 dark:text-purple-200 mb-3">
+            <i class="fas fa-smile"></i>
+          </div>
+          <span class="text-4xl font-bold text-primary">100%</span>
+          <p class="text-secondary mt-2">Satisfaction Rate</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+        <style>
+.image-container img {
+  border: 5px solid #fff;
+  transform: rotate(5deg);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.image-container img:hover {
+  transform: rotate(0deg) scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.dark .image-container img {
+  border: 5px solid #1f2937; /* darker border in dark mode */
+}
+.dark .image-container img:hover {
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes spin-slow {     /*for hi*/
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
     .hover-animate {
       transition: transform 0.3s ease-in-out;
     }
@@ -253,6 +322,8 @@
     z-index: 1;
   }
 </style>
+    
+
 
 <!---service section-->
 <section id="services" class="py-20 bg-gray-100">
@@ -346,12 +417,11 @@
     });
   });
 </script>
-    </section>
 
     <!-- Portfolio Section -->
-    <section id="works" class="py-20 bg-blue-100">
+    <section id="works" class="py-20 bg-gray-100">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
+            <div class="text-center mb-4">
                 <h2 class="text-4xl font-bold mb-4">My Recent Works</h2>
                 <p class="text-secondary max-w-2xl mx-auto">We put your ideas and thus your wishes in the form of a unique web project that inspires you and your customers.</p>
                 <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
@@ -360,10 +430,10 @@
            <!-- Filter Buttons -->
 <div class="portfolio-filter flex justify-center mb-12">
   <div class="flex flex-wrap justify-center gap-2">
-    <button class="filter-btn px-4 py-2 text-red-500 bg-gray-100 hover:bg-gray-200 rounded-md" data-filter="all">All</button>
-    <button class="filter-btn px-4 py-2 text-red-500 bg-gray-100 hover:bg-gray-200 rounded-md" data-filter="uxui">UX/UI</button>
-    <button class="filter-btn px-4 py-2 text-red-500 bg-gray-100 hover:bg-gray-200 rounded-md" data-filter="branding">Branding</button>
-    <button class="filter-btn px-4 py-2 text-red-500 bg-gray-100 hover:bg-gray-200 rounded-md" data-filter="apps">Apps</button>
+    <button class="filter-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:bg-blue-500" data-filter="all">All</button>
+    <button class="filter-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:bg-blue-500" data-filter="uxui">UX/UI</button>
+    <button class="filter-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:bg-blue-500" data-filter="branding">Branding</button>
+    <button class="filter-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300 hover:bg-blue-500 hover:text-white dark:hover:bg-blue-500" data-filter="apps">Apps</button>
   </div>
 </div>
 
@@ -503,7 +573,7 @@
       
       <!-- My Experience -->
       <div>
-        <h2 class="text-4xl font-bold text-purple-700 flex items-center gap-2 mb-6">
+        <h2 class="text-4xl font-bold text-purple-700 flex items-center gap-2 mb-6 pt-4">
           <span>💼</span> My Experience </h2>
 
         <div class="space-y-5">
@@ -530,7 +600,7 @@
 
       <!-- My Education -->
       <div>
-        <h2 class="text-4xl font-bold text-purple-700 flex items-center gap-2 mb-6">
+        <h2 class="text-4xl font-bold text-purple-700 flex items-center gap-2 mb-6 pt-4">
           <span>🎓</span> My Education </h2>
 
         <div class="space-y-5">
@@ -619,7 +689,7 @@
     
     <!-- Left Side Content -->
     <div>
-      <h2 class="text-4xl font-extrabold text-purple-900 mb-4">
+      <h2 class="text-4xl font-extrabold text-purple-900 pt-4">
         My Client's Stories
       </h2>
       <p class="text-black-600 text-lg leading-relaxed">
@@ -765,7 +835,7 @@
 
   <!-- Section Heading -->
   <div class="text-center w-full max-w-4xl mb-16 bg-purple-50">
-    <h2 class="text-4xl font-bold mb-4 text-purple-500">Recent Blogs</h2>
+    <h2 class="text-4xl font-bold mb-4 text-purple-500 pt-4">Recent Blogs</h2>
     <p class="text-purple-600">
       We put your ideas and thus your wishes in the form of a unique web project that inspires you and your customers.
     </p>
@@ -832,7 +902,7 @@
     
     <!-- Left Side: Contact Form -->
     <div class="bg-white space-y-4 border-l-2 border-white-600 rounded-lg pl-8">
-      <h2 class="text-4xl font-bold text-purple-900 mb-4">Let’s work together!</h2>
+      <h2 class="text-4xl font-bold text-purple-900 mb-4 pt-4">Let’s work together!</h2>
       <p class="text-gray-600 mb-8">
         I design and code beautifully simple things and I love what I do. Just simple like that!
       </p>
@@ -868,8 +938,9 @@
     <div class="mt-20 ml-10 bg-white space-y-4 border-l-2 border-white-600 rounded-lg pl-8">
       <!-- Contact info content -->
       <div class="space-y-8">
+        <h2 class="text-4xl font-bold text-purple-900 mb-4 pt-2">Contact Information</h2>
         <!-- Phone -->
-        <div class="flex items-center gap-8">
+        <div class="flex items-center gap-4">
           <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-full shadow-md">
             <i class="fas fa-phone"></i>
           </div>
@@ -911,10 +982,10 @@
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
     <!-- Footer -->
-    <footer class="bg-green-600 text-white py-4 sm:flex  items-center">
-        <div class="container mx-auto px-6">
-            <div class="flex items-center justify-center">
-              <img src="logo.png">
+    <footer class="bg-gray-600 text-white py-4 sm:flex  items-center">
+        <div class="container mx-auto px-6 py-6">
+            <div class="container mx-auto flex justify-center">
+              <img src="aishlogo.webp"  alt="Logo" class="w-20 h-auto">
                 </div>
      <div class="flex justify-center space-x-6 my-8">
                  
@@ -1016,5 +1087,4 @@
     </script>
     
 </body>
-
 </html>
