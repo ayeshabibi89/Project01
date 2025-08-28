@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome (for moon/sun icons) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerold-Web Developer & Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#64748b',
+                        dark: '#0f172a',
+                        light: '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+ /* Light Theme Defaults */
+    .theme-light {
+      --section-hero: #f0f9ff;   /* light blue */
+      --section-services: #ffffff;
+      --section-works: #dbeafe;  /* blue-100 */
+      --section-experience: #faf5ff; /* purple-50 */
+      --section-skills: #dbeafe; /* blue-100 */
+      --section-testimonials: #f5f3ff; /* purple-50 */
+      --section-blogs: #ffffff;
+      --text-color: #111827;
+    }
+
+    /* Dark Theme */
+    .theme-dark {
+      --section-hero: #1e293b;    
+      --section-services: #0f172a; 
+      --section-works: #1e3a8a;   
+      --section-experience: #312e81;
+      --section-skills: #1e293b; 
+      --section-testimonials: #2e1065;
+      --section-blogs: #111827;
+      --text-color: #f8fafc;
+    }
+
+    /* Apply to sections */
+    .theme-dark section {
+      transition: background-color 0.4s, color 0.4s;
+      color: var(--text-color);
+      padding: 4rem;
+      text-align: center;
+    }
+
+    #home         { background-color: var(--section-hero); }
+    #services     { background-color: var(--section-services); }
+    #works        { background-color: var(--section-works); }
+    #experience   { background-color: var(--section-experience); }
+    #skills       { background-color: var(--section-skills); }
+    #testimonials { background-color: var(--section-testimonials); }
+    #blogs        { background-color: var(--section-blogs); }
+
+
+      .theme-dark #home {
+    padding-top: 120px;   /* space at top */
+    padding-bottom: 40px; /* space at bottom */
+  }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .progress-bar {
+            height: 6px;
+            border-radius: 4px;
+            background-color: #e2e8f0;
+            overflow: hidden;
+        }
+        
+        .progress-value {
+            height: 100%;
+            border-radius: 4px;
+            background-color: #3b82f6;
+            transition: width 1s ease-in-out;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .theme-dark .bg-gradient-to-r {
+  background-image: linear-gradient(to right, #1e293b, #0f172a) !important;
+}
+        .portfolio-filter button.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+.theme-dark body{
+  margin-top: 64px; /* same as your header height */
+}
+        .testimonial-card {
+            opacity: 0.7;
+            transform: scale(0.9);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+  
+    <!-- Header/Navigation -->
+ 
+<header class="fixed w-full bg-gray-300 shadow-md z-40">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center mr-6">
+      <div class="w-20">
+      <img src="aishlogo.webp"></div>
+      <a href="#" class="text-primary">ayeshabibiayesha<br>8900@gmail.com</a>
+      <nav class="hidden sm:flex space-x-9 items-center">
+        <a href="#services" class="hover:text-primary transition ml-3">Services</a>
+        <a href="#portfolio" class="hover:text-primary transition">Portfolio</a>
+        <a href="#experience" class="hover:text-primary transition">Experience</a>
+        <a href="#skills" class="hover:text-primary transition">Skills</a>
+        <a href="#testimonials" class="hover:text-primary transition">Testimonials</a>
+        <a href="#Resumes" class="hover:text-primary transition">Resumes</a>
+        <a href="#works" class="hover:text-primary transition">Works</a>
+        <a href="#home" class="hover:text-primary transition">Home</a>
+          <a href="#blogs" class="hover:text-primary transition">Blogs</a>
+      </nav>
+      <a href="#Hire me" class="border border-primary text-primary px-6 py-3 rounded-md hover:bg-blue-50 transition hidden md:block ml-6">Hire Me!</a>
+    </div>
+  </header>
+  <button id="theme-toggle" 
+        class="fixed top-20 right-2 px-4 py-2 rounded bg-gray-800 text-white shadow text-xl z-50">
+  🌙
+</button>
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h4 class="text-primary font-semibold mb-2 text-4xl" >I am Ayesha</h4>
+                <h3 class="text-6xl text-secondary mb-6 font-merriweather font-bold">Next-Level Web Developer</h3>
+                <p class="text-secondary mb-8 max-w-md font-bold text-1xl">I break down complex user experience problems to create integrity focussed solutions that connect billions of people.</p>
+                <div class="flex space-x-4">
+                    <a href="#portfolio" class="bg-primary text-white px-6 py-3 rounded-md hover:bg-blue-600 transition" onclick="downloadFile('MyCV.pdf')"">Download CV </a>
+                </div>
+                 <h1 class="absolute inset-0 flex items-center  justify-center text-[15rem] font-bold text-purple-100 opacity-1600 pointer-events-none select-none">
+    HI
+  </h1>
+            </div>
+            <div class="image-container max-w-[20%]">
+              <img src="aish.jpg" alt="my image">
+            </div>
+            </div>
+            <style>
+            .image-container img {
+              border: 5px solid #fff;
+              transform: rotate(5deg);
+              transition: transform 0.3s ease-in-out;
+            }
+            
+            .image-container img:hover {
+              transform: rotate(0deg) scale(1.1);
+              box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }</style>
+    </section>
+
+
+    <section class="pb-20 bg-gradient-to-r from-blue-50 to-indigo-50">
+      <div class="md:w-full flex justify-center bg-green-200">
+        <div class="grid grid-cols-4 gap-4">
+          <div class="bg-white p-6 rounded-lg shadow-md text-center hover-animate">
+            <span class="text-4xl font-bold text-primary">14+</span>
+            <p class="text-secondary mt-2">Years of Experience</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center hover-animate delay-100">
+            <span class="text-4xl font-bold text-primary">50+</span>
+            <p class="text-secondary mt-2">Projects Completed</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center hover-animate delay-200">
+            <span class="text-4xl font-bold text-primary">1.5K</span>
+            <p class="text-secondary mt-2">Happy Clients</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center hover-animate delay-300">
+            <span class="text-4xl font-bold text-primary">100%</span>
+            <p class="text-secondary mt-2">Satisfaction Rate</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+    .hover-animate {
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .hover-animate:hover {
+      transform: scale(1.1) translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .delay-100 {
+      transition-delay: 0.1s;
+    }
+    
+    .delay-200 {
+      transition-delay: 0.2s;
+    }
+    
+    .delay-300 {
+      transition-delay: 0.3s;
+    }
+    </style>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+<style>
+  .service-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* glowing radial gradient that follows cursor */
+  .service-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(86, 23, 233, 0.35), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+  }
+
+  .service-card:hover::before {
+    opacity: 1;
+  }
+
+  /* keep content above overlay */
+  .service-card * {
+    position: relative;
+    z-index: 1;
+  }
+</style>
+
+<!---service section-->
+<section id="services" class="py-20 bg-gray-100">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4">My Quality Services</h2>
+      <p class="text-secondary max-w-2xl mx-auto">
+        We put your ideas and thus your wishes in the form of a unique web project that inspires you and your customers.
+      </p>
+      <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+    </div>
+
+    <div class="space-y-6">
+      <!-- Service Item -->
+       
+      <div class="service-card flex items-center justify-between p-6 rounded-lg border transition-all duration-300 cursor-pointer">
+        <div class="flex items-start space-x-4">
+          <span class="text-lg font-bold text-purple-600">01</span>
+          <div>
+            <h3 class="text-xl font-semibold">Responsive Design</h3>
+            <p class="text-secondary">
+              Ensure your website looks great on any device, with layouts that adapt to different screen sizes seamlessly.
+            </p>
+          </div>
+        </div>
+        <span class="text-purple-600">
+          <i class="fas fa-arrow-right"></i>
+        </span>
+      </div>
+
+      <!-- Service Item -->
+      <div class="service-card flex items-center justify-between p-6 rounded-lg border transition-all duration-300 cursor-pointer">
+        <div class="flex items-start space-x-4">
+          <span class="text-lg font-bold text-purple-600">02</span>
+          <div>
+            <h3 class="text-xl font-semibold">CMS Development</h3>
+            <p class="text-secondary">
+              Set up user-friendly CMS solutions like WordPress or custom-built options so clients can manage content easily.
+            </p>
+          </div>
+        </div>
+        <span class="text-purple-600">
+          <i class="fas fa-arrow-right"></i>
+        </span>
+      </div>
+
+      <!-- Service Item -->
+      <div class="service-card flex items-center justify-between p-6 rounded-lg border transition-all duration-300 cursor-pointer">
+        <div class="flex items-start space-x-4">
+          <span class="text-lg font-bold text-purple-600">03</span>
+          <div>
+            <h3 class="text-xl font-semibold">API Integrations</h3>
+            <p class="text-secondary">
+              Build and integrate APIs to connect websites with third-party applications, enhancing functionality and performance.
+            </p>
+          </div>
+        </div>
+        <span class="text-purple-600">
+          <i class="fas fa-arrow-right"></i>
+        </span>
+      </div>
+
+      <!-- Service Item -->
+      <div class="service-card flex items-center justify-between p-6 rounded-lg border transition-all duration-300 cursor-pointer">
+        <div class="flex items-start space-x-4">
+          <span class="text-lg font-bold text-purple-600">04</span>
+          <div>
+            <h3 class="text-xl font-semibold">Website Redesign</h3>
+            <p class="text-secondary">
+              Refresh outdated websites with modern, appealing designs that align with current brand goals and user expectations.
+            </p>
+          </div>
+        </div>
+        <span class="text-purple-600">
+          <i class="fas fa-arrow-right"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // cursor tracking effect for each service card
+  document.querySelectorAll(".service-card").forEach(card => {
+    card.addEventListener("mousemove", e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty("--x", `${x}px`);
+      card.style.setProperty("--y", `${y}px`);
+    });
+  });
+</script>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="works" class="py-20 bg-blue-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">My Recent Works</h2>
+                <p class="text-secondary max-w-2xl mx-auto">We put your ideas and thus your wishes in the form of a unique web project that inspires you and your customers.</p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            
+           <!-- Filter Buttons -->
+<div class="portfolio-filter flex justify-center mb-12">
+  <div class="flex flex-wrap justify-center gap-2">
+    <button class="filter-btn px-4 py-2 text-red-500 bg-gray-100 hover:bg-gray-200 rounded-md" data-filter="all">All</button>
+    <button class="filter-btn px-4 py-2 text-red-500 bg-gray-100 hover:bg-gray-200 rounded-md" data-filter="uxui">UX/UI</button>
+    <button class="filter-btn px-4 py-2 text-red-500 bg-gray-100 hover:bg-gray-200 rounded-md" data-filter="branding">Branding</button>
+    <button class="filter-btn px-4 py-2 text-red-500 bg-gray-100 hover:bg-gray-200 rounded-md" data-filter="apps">Apps</button>
+  </div>
+</div>
+
+
+<!-- Portfolio Items Grid -->
+ <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+  <div class="portfolio-item max-w-md mx-auto relative group border-t-[32px] border-l-[32px] border-r-[32px] border-black overflow-hidden shadow-md"
+    data-category="all">
+    <div class="bg-purple-600 flex items-center justify-center">
+      <img src="2.jpg" alt="Deloitte" class="object-cover w-full">
+    </div>
+  <div class="p-6 bg-black text-white">
+          <div class="mt-4 flex justify-between items-center">
+            <span class="font-bold text-primary">2M</span>
+            <span class="font-bold text-primary">1.3B</span>
+          </div>
+        </div>
+        <div class="absolute bottom-4 left-4 right-4 bg-purple-600 text-white p-4 rounded-lg flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div>
+            <h4 class="font-bold">Deloitte</h4>
+            <p class="text-sm">Project was about precision and information.</p>
+          </div>
+          <span class="text-2xl">↗</span>
+        </div>
+  </div>
+
+  <!-- Portfolio Item 2 (UX/UI) -->
+  <div class="portfolio-item max-w-md mx-auto relative group border-t-[32px] border-l-[32px] border-r-[32px] border-black overflow-hidden shadow-md"
+    data-category="uxui">
+    <div class="bg-purple-600 flex items-center justify-center">
+      <img src="3.jpg" alt="MyJuru App" class="object-cover w-full">
+    </div>
+        <div class="p-6 bg-black text-white">
+          <div class="mt-4 flex justify-between items-center">
+            <span class="font-bold text-primary">2M</span>
+            <span class="font-bold text-primary">01</span>
+          </div>
+        </div>
+        <div class="absolute bottom-4 left-4 right-4 bg-purple-600 text-white p-4 rounded-lg flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div>
+            <h4 class="font-bold">MyJuru App</h4>
+            <p class="text-sm">Project was about simplicity and efficiency.</p>
+          </div>
+          <span class="text-2xl">↗</span>
+        </div>
+  </div>
+
+  <!-- Portfolio Item 3 (Branding) -->
+  <div class="portfolio-item max-w-md mx-auto relative group border-t-[32px] border-l-[32px] border-r-[32px] border-black overflow-hidden shadow-md"
+    data-category="branding">
+    <div class="bg-purple-600 flex items-center justify-center">
+      <img src="4.jpg" alt="Cosmic Sports Platform" class="object-cover w-full">
+    </div>
+         <div class="p-6 bg-black text-white">
+          <div class="mt-4 flex justify-between items-center">
+            <div>
+              <span class="font-bold text-primary">5.0</span>
+              <p class="text-sm text-gray-400">Rating</p>
+            </div>
+            <div>
+              <span class="font-bold text-primary">10+</span>
+              <p class="text-sm text-gray-400">Design Awards</p>
+            </div>
+          </div>
+        </div>
+        <div class="absolute bottom-4 left-4 right-4 bg-purple-600 text-white p-4 rounded-lg flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div>
+            <h4 class="font-bold">Cosmic Sports Platform</h4>
+            <p class="text-sm">Project focuses on user engagement and innovation.</p>
+          </div>
+          <span class="text-2xl">↗</span>
+        </div>
+  </div>
+
+  <!-- Portfolio Item 4 (Apps) -->
+  <div class="portfolio-item max-w-md mx-auto relative group border-t-[32px] border-l-[32px] border-r-[32px] border-black overflow-hidden shadow-md"
+    data-category="apps">
+    <div class="bg-purple-600 flex items-center justify-center">
+      <img src="5.jpg" alt="Cosmic Sports Platform" class="object-cover w-full">
+    </div>
+ <div class="p-6 bg-black text-white">
+          <div class="mt-4 flex justify-between items-center">
+            <div>
+              <span class="font-bold text-primary">5.0</span>
+              <p class="text-sm text-gray-400">Rating</p>
+            </div>
+          </div>
+        </div>
+        <div class="absolute bottom-4 left-4 right-4 bg-purple-600 text-white p-4 rounded-lg flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div>
+            <h4 class="font-bold">Cosmic Sports Platform</h4>
+            <p class="text-sm">Project focuses on user engagement and innovation.</p>
+          </div>
+          <span class="text-2xl">↗</span>
+        </div>
+  </div>
+  </div>
+</section>
+
+<!-- JavaScript -->
+<script>
+  const filterButtons5 = document.querySelectorAll(".filter-btn");
+  const portfolioItems5 = document.querySelectorAll(".portfolio-item");
+
+  filterButtons5.forEach(button => {
+    button.addEventListener("click", () => {
+      const filter = button.getAttribute("data-filter");
+
+      // Remove active styles from all buttons
+      filterButtons5.forEach(btn => {
+        btn.classList.remove("bg-primary", "text-white");
+        btn.classList.add("bg-gray-100");
+      });
+
+      // Add active style to clicked button
+      button.classList.remove("bg-gray-100");
+      button.classList.add("bg-primary", "text-white");
+
+      // Show/Hide portfolio items
+      portfolioItems5.forEach(item => {
+        if (filter === "all" || item.getAttribute("data-category") === filter) {
+          item.style.display = "block"; // show
+        } else {
+          item.style.display = "none"; // hide
+        }
+      });
+    });
+  });
+</script>
+
+
+<!--experience and education-->     
+<section id="experience" class="pb-20 bg-gradient-to-r from-blue-50 to-indigo-50">
+  <div class="max-w-6xl mx-auto">
+    <!-- Section Heading -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      
+      <!-- My Experience -->
+      <div>
+        <h2 class="text-4xl font-bold text-purple-700 flex items-center gap-2 mb-6">
+          <span>💼</span> My Experience </h2>
+
+        <div class="space-y-5">
+          <!-- Card -->
+          <div class="bg-white rounded-2xl shadow p-5 transition-transform transform hover:scale-105 hover:shadow-xl">
+            <p class="text-purple-600 font-semibold">2022</p>
+            <h3 class="font-bold text-gray-900 text-lg">PROGRAMMING COURSE</h3>
+            <p class="text-gray-600">MS-Office, Superior College</p>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow p-5 transition-transform transform hover:scale-105 hover:shadow-xl">
+            <p class="text-purple-600 font-semibold">2023</p>
+            <h3 class="font-bold text-gray-900 text-lg">WEB DEVELOPMENT</h3>
+            <p class="text-gray-600">GGCP, Sialkot</p>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow p-5 transition-transform transform hover:scale-105 hover:shadow-xl">
+            <p class="text-purple-600 font-semibold">2025</p>
+            <h3 class="font-bold text-gray-900 text-lg">INTERNSHIP</h3>
+            <p class="text-gray-600">DYNSOF, Pasrur</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- My Education -->
+      <div>
+        <h2 class="text-4xl font-bold text-purple-700 flex items-center gap-2 mb-6">
+          <span>🎓</span> My Education </h2>
+
+        <div class="space-y-5">
+          <!-- Highlighted Card -->
+          <div class="bg-white rounded-2xl shadow p-5 transition-transform transform hover:scale-105 hover:shadow-xl">
+            <p class="text-purple-600 font-semibold">2018 – 2020</p>
+            <h3 class="font-bold text-gray-900 text-lg">MATRIC</h3>
+            <p class="text-gray-600">Government High School</p>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow p-5 transition-transform transform hover:scale-105 hover:shadow-xl">
+            <p class="text-purple-600 font-semibold">2020 – 2022</p>
+            <h3 class="font-bold text-gray-900 text-lg">FSC PRE-ENGINEERING</h3>
+            <p class="text-gray-600">Superior Group of Colleges, Daska</p>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow p-5 transition-transform transform hover:scale-105 hover:shadow-xl">
+            <p class="text-purple-600 font-semibold">2022 – 2026</p>
+            <h3 class="font-bold text-gray-900 text-lg">BS-COMPUTER SCIENCES</h3>
+            <p class="text-gray-600">University of Punjab, Lahore</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!--skill section-->
+<section id="skills" class="px-6 py-16  text-center bg-blue-100">
+  <div class="max-w-6xl mx-auto">
+    <!-- Title -->
+    <h2 class="text-3xl font-bold text-purple-700 mb-3">My Skills</h2>
+    <p class="text-gray-600 max-w-2xl mx-auto mb-12">
+      We put your ideas and thus your wishes in the form of a unique web project that inspires you and your customers.
+    </p>
+
+    <!-- Skills Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 ">
+      <!-- Skill Card -->
+      <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center justify-center 
+                  transition-transform transform hover:scale-105 hover:shadow-xl hover:bg-purple-50 
+                  animate-fadeIn">
+        <img src="figma.png" alt="Figma" class="w-12 h-12 mb-3" />
+        <p class="text-xl font-bold text-gray-800">92%</p>
+        <p class="text-purple-600 font-medium">Figma</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center justify-center 
+                  transition-transform transform hover:scale-105 hover:shadow-xl hover:bg-purple-50 animate-fadeIn delay-100">
+        <img src="cpp.webp" alt="Sketch" class="w-12 h-12 mb-3" />
+        <p class="text-xl font-bold text-gray-800">80%</p>
+        <p class="text-purple-600 font-medium">C++</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center justify-center 
+                  transition-transform transform hover:scale-105 hover:shadow-xl hover:bg-purple-50 animate-fadeIn delay-200">
+        <img src="csh.webp" alt="XD" class="w-12 h-12 mb-3" />
+        <p class="text-xl font-bold text-gray-800">85%</p>
+        <p class="text-purple-600 font-medium">C#</p>
+      </div>
+      
+      <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center justify-center 
+                  transition-transform transform hover:scale-105 hover:shadow-xl hover:bg-purple-50 animate-fadeIn delay-400">
+        <img src="react.png" alt="React" class="w-12 h-12 mb-3" />
+        <p class="text-xl font-bold text-gray-800">89%</p>
+        <p class="text-purple-600 font-medium">React</p>
+      </div>
+
+  <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center justify-center
+                  transition-transform transform hover:scale-105 hover:shadow-xl hover:bg-purple-50 animate-fadeIn delay-400">
+        <img src="js.png" alt="JS" class="w-12 h-12 mb-3 object-contain" />
+        <p class="text-xl font-bold text-gray-800">93%</p>
+        <p class="text-purple-600 font-medium">JS</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!--my client stories-->
+<section class="pb-20 bg-gradient-to-r from-blue-50 to-indigo-50">
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+    
+    <!-- Left Side Content -->
+    <div>
+      <h2 class="text-4xl font-extrabold text-purple-900 mb-4">
+        My Client's Stories
+      </h2>
+      <p class="text-black-600 text-lg leading-relaxed">
+        Empowering people in new a digital journey with my super services
+      </p>
+    </div>
+
+    <!-- Right Side Testimonials (Slider with 2 cards visible) -->
+    <div class="relative" >
+      <div id="testimonialSlider" class="overflow-hidden relative">
+        <div class="flex transition-transform duration-500 ease-in-out" id="sliderTrack">
+          
+          <!-- Group 1 (Slide 1) -->
+          <div class="w-full h-80 grid grid-cols-1 md:grid-cols-2 gap-6 flex-shrink-0 px-2">
+            <div class="bg-purple-50 rounded-2xl shadow p-6 max-w-sm mx-auto">
+                <div class="flex flex-col items-center">
+              <div class="flex items-center justify-center mb-4 gap-12">
+                <img src="1-dark.png" class="w-16 h-16 mb-10">
+                  <img src="1.jpg" class="w-16 h-16 mb-10 ">
+                </div>
+              <p class="text-gray-600">“Taylor is a professional Designer he really helps my business by providing value.”</p>
+                 <div>
+                  <h4 class="font-bold text-gray-800">Tim Bailey</h4>
+                  <p class="text-sm text-gray-500">SEO Specialist, Theme Junction</p>
+                </div>
+              </div>
+            </div>
+                    <div class="bg-purple-50 rounded-2xl shadow p-6 max-w-sm mx-auto">
+                <div class="flex flex-col items-center">
+              <div class="flex items-center justify-center mb-4 gap-12">
+                <img src="1-dark.png" class="w-16 h-16 mb-10">
+                  <img src="1.jpg" class="w-16 h-16 mb-10 ">
+                </div>
+              <p class="text-gray-600">“Taylor is a Proffessional Designer he really helps my bussiness by providing value to my bussiness."</p>
+                 <div>
+                  <h4 class="font-bold text-gray-800">Brandon Farser</h4>
+                  <p class="text-sm text-gray-500">Senior Software Dev, Cosmic Sport</p>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+
+          <!-- Group 2 (Slide 2) -->
+  
+
+                   <div class="w-full h-80 grid grid-cols-1 md:grid-cols-2 gap-6 flex-shrink-0 px-2">
+            <div class="bg-purple-50 rounded-2xl shadow p-6 max-w-sm mx-auto">
+                <div class="flex flex-col items-center">
+              <div class="flex items-center justify-center mb-4 gap-12">
+                <img src="1-dark.png" class="w-16 h-16 mb-10">
+                  <img src="1.jpg" class="w-16 h-16 mb-10 ">
+                </div>
+              <p class="text-gray-600">“Taylor is a professional Designer he really helps my business by providing value.”</p>
+                 <div>
+                  <h4 class="font-bold text-gray-800">Tim Bailey</h4>
+                  <p class="text-sm text-gray-500">SEO Specialist, Theme Junction</p>
+                </div>
+              </div>
+              </div>
+        <div class="bg-purple-50 rounded-2xl shadow p-6 max-w-sm mx-auto">
+                <div class="flex flex-col items-center">
+              <div class="flex items-center justify-center mb-4 gap-12">
+                <img src="1-dark.png" class="w-16 h-16 mb-10">
+                  <img src="1.jpg" class="w-16 h-16 mb-10 ">
+                </div>
+              <p class="text-gray-600">“Taylor is a Proffessional Designer he really helps my bussiness by providing value to my bussiness."</p>
+                 <div>
+                  <h4 class="font-bold text-gray-800">Brandon Farser</h4>
+                  <p class="text-sm text-gray-500">Senior Software Dev, Cosmic Sport</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Group 3(Slide 3) -->
+               <div class="w-full h-80 grid grid-cols-1 md:grid-cols-2 gap-6 flex-shrink-0 px-2">
+            <div class="bg-purple-50 rounded-2xl shadow p-6 max-w-sm mx-auto">
+                <div class="flex flex-col items-center">
+              <div class="flex items-center justify-center mb-4 gap-12">
+                <img src="1-dark.png" class="w-16 h-16 mb-10">
+                  <img src="1.jpg" class="w-16 h-16 mb-10 ">
+                </div>
+              <p class="text-gray-600">“Taylor is a professional Designer he really helps my business by providing value.”</p>
+                 <div>
+                  <h4 class="font-bold text-gray-800">Tim Bailey</h4>
+                  <p class="text-sm text-gray-500">SEO Specialist, Theme Junction</p>
+                </div>
+              </div>
+            </div>
+
+        <div class="bg-purple-50 rounded-2xl shadow p-6 max-w-sm mx-auto">
+                <div class="flex flex-col items-center">
+              <div class="flex items-center justify-center mb-4 gap-12">
+                <img src="1-dark.png" class="w-16 h-16 mb-10">
+                  <img src="1.jpg" class="w-16 h-16 mb-10 ">
+                </div>
+              <p class="text-gray-600">“Taylor is a Proffessional Designer he really helps my bussiness by providing value to my bussiness."</p>
+                 <div>
+                  <h4 class="font-bold text-gray-800">Brandon Farser</h4>
+                  <p class="text-sm text-gray-500">Senior Software Dev, Cosmic Sport</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- Dots Navigation -->
+      <div class="flex justify-center mt-6 space-x-2">
+        <button class="dot w-3 h-3 rounded-full bg-gray-400" data-index="0"></button>
+        <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="1"></button>
+        <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="2"></button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const sliderTrack = document.getElementById("sliderTrack");
+  const dots = document.querySelectorAll(".dot");
+  let currentIndex = 0;
+
+  dots.forEach(dot => {
+    dot.addEventListener("click", () => {
+      currentIndex = parseInt(dot.getAttribute("data-index"));
+      sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      // Update active dot
+      dots.forEach(d => d.classList.replace("bg-gray-400", "bg-gray-300"));
+      dots[currentIndex].classList.replace("bg-gray-300", "bg-gray-400");
+    });
+  });
+</script>
+
+<!--blog section-->
+<section id="blogs" class="py-16 bg-white">
+<!-- Wrapper to center everything -->
+<div class="flex flex-col items-center justify-center px-4 py-16">
+
+  <!-- Section Heading -->
+  <div class="text-center w-full max-w-4xl mb-16 bg-purple-50">
+    <h2 class="text-4xl font-bold mb-4 text-purple-500">Recent Blogs</h2>
+    <p class="text-purple-600">
+      We put your ideas and thus your wishes in the form of a unique web project that inspires you and your customers.
+    </p>
+    
+  </div>
+
+
+    <!-- Blog Cards -->
+    <div class="grid md:grid-cols-3 gap-8">
+      
+      <!-- Blog 1 -->
+          <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+  <img src="1 (1).jpg" alt="Pic 1"
+       class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110">
+
+  <div class="absolute inset-0 bg-black bg-opacity-40 flex items-start justify-start p-4">
+    <a href="#home" class="bg-purple-400 hover:bg-purple-600 text-white px-5 py-2 rounded-lg font-semibold shadow-md transition-colors duration-300">
+      TUTORIAL
+    </a>
+  </div>
+</div>
+
+      <!-- Blog 2 -->
+      <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+  <img src="2 (3).jpg" alt="Pic 2"
+       class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110">
+
+  <div class="absolute inset-0 bg-black bg-opacity-40 flex items-start justify-start p-4">
+    <a href="#home" class="bg-purple-400 hover:bg-purple-600 text-white px-5 py-2 rounded-lg font-semibold shadow-md transition-colors duration-300">
+      TIPS
+    </a>
+  </div>
+</div>
+
+
+      <!-- Blog 3 -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg">
+  <img src="3 (1).jpg" alt="Pic 3"
+       class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110">
+
+  <div class="absolute inset-0 bg-black bg-opacity-40 flex items-start justify-start p-4">
+    <a href="#home" class="bg-purple-400 hover:bg-purple-600 text-white px-5 py-2 rounded-lg font-semibold shadow-md transition-colors duration-300">
+      FREEBIES
+    </a>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+    <!-- Contact Section -->
+
+<section class="pb-20 bg-gradient-to-r from-blue-50 to-indigo-50">
+  <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-start">
+    
+    <!-- Left Side: Contact Form -->
+    <div class="bg-white space-y-4 border-l-2 border-white-600 rounded-lg pl-8">
+      <h2 class="text-4xl font-bold text-purple-900 mb-4">Let’s work together!</h2>
+      <p class="text-gray-600 mb-8">
+        I design and code beautifully simple things and I love what I do. Just simple like that!
+      </p>
+      
+      <form action="#" method="POST" class="space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="text" placeholder="First name" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-purple-600 focus:outline-none bg-gray-200">
+          <input type="text" placeholder="Last name" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-purple-600 focus:outline-none bg-gray-200">
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 ">
+          <input type="email" placeholder="Email address" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-purple-600 focus:outline-none bg-gray-200">
+          <input type="text" placeholder="Phone number" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-purple-600 focus:outline-none bg-gray-200">
+        </div>
+
+        <select class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-600 focus:ring-2 focus:ring-purple-600 focus:outline-none bg-gray-200">
+          <option>Choose Service</option>
+          <option>Web Development</option>
+          <option>UI/UX Design</option>
+          <option>App Development</option>
+        </select>
+
+        <textarea rows="4" placeholder="Message" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-purple-600 focus:outline-none bg-gray-200"></textarea>
+        
+        <!-- Submit Button -->
+        <button type="submit" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-800 text-white font-semibold rounded-full shadow-md hover:from-purple-700 hover:to-purple-900 transition duration-300">
+          Send Message
+        </button>
+      </form>
+    </div>
+
+    <!-- Right Side: Contact Info with triangle border -->
+    <div class="mt-20 ml-10 bg-white space-y-4 border-l-2 border-white-600 rounded-lg pl-8">
+      <!-- Contact info content -->
+      <div class="space-y-8">
+        <!-- Phone -->
+        <div class="flex items-center gap-8">
+          <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-full shadow-md">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div>
+            <p class="text-gray-500 text-sm">Phone</p>
+            <p class="text-gray-900 font-medium">+01 123 654 8096</p>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-full shadow-md">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div>
+            <p class="text-gray-500 text-sm">Email</p>
+            <p class="text-gray-900 font-medium">gerolddesign@mail.com</p>
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-full shadow-md">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div>
+            <p class="text-gray-500 text-sm">Address</p>
+            <p class="text-gray-900 font-medium">
+              Warne Park Street Pine, <br> FL 33157, New York
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Footer -->
+    <footer class="bg-green-600 text-white py-4 sm:flex  items-center">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-center">
+              <img src="logo.png">
+                </div>
+     <div class="flex justify-center space-x-6 my-8">
+                 
+            
+                        <nav class="hidden md:flex space-x-10">
+                <a href="#home" class="hover:text-primary transition">Home</a>
+                <a href="#services" class="hover:text-primary transition">Services</a>
+                <a href="#portfolio" class="hover:text-primary transition">Portfolio</a>
+                <a href="#experience" class="hover:text-primary transition">Experience</a>
+                <a href="#skills" class="hover:text-primary transition">Skills</a>
+                <a href="#blogs" class="hover:text-primary transition">Blogs</a>
+               
+            </nav>
+     </div>
+                <p class="text-gray-400 flex justify-center space-x-10">© 2024 All rights reserved by ThemeJunction</p>
+          </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Portfolio filtering
+        const filterButtons = document.querySelectorAll('.portfolio-filter button');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+
+        // Animate progress bars when they come into view
+        const progressBars = document.querySelectorAll('.progress-value');
+        
+        function animateProgressBars() {
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 200);
+            });
+        }
+        
+        // Run on page load
+        window.addEventListener('load', animateProgressBars);
+        function downloadFile(filename) {
+    const link = document.createElement("a");
+    link.href = filename;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);}
+
+
+
+    function downloadFile(filename) {
+    const link = document.createElement("a");
+    link.href = filename; // e.g., 'noshalresume.pdf'
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);}
+
+    const button = document.getElementById("theme-toggle");
+    const body = document.body;
+    let darkMode = false;
+
+    button.addEventListener("click", () => {
+      if (darkMode) {
+        body.classList.remove("theme-dark");
+        body.classList.add("theme-light");
+        button.textContent = "🌙"; // moon means "switch to dark"
+      } else {
+        body.classList.remove("theme-light");
+        body.classList.add("theme-dark");
+        button.textContent = "☀️"; // sun means "switch to light"
+      }
+      darkMode = !darkMode;
+    });
+    
+    </script>
+    
+</body>
+</html>
