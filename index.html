@@ -123,47 +123,110 @@
 </head>
 <body >
   
-<header class="fixed top-0 left-0 w-full bg-gray-100 dark:bg-gray-900 shadow-md z-50">
-  <div class="container mx-auto flex items-center justify-between px-6 py-3">
-    
-    <!-- Left Side: Logo + Email -->
-    <div class="flex items-center gap-4">
-      <img src="aishlogo.webp" alt="Logo" class="w-14 h-14 object-contain">
-      <a href="mailto:ayeshabibiayesha8900@gmail.com" 
-         class="text-sm text-gray-700 dark:text-gray-300 hover:text-blue-500">
-        ayeshabibiayesha8900@gmail.com
-      </a>
+<header class="fixed inset-x-0 top-0 z-50 bg-gray-100 dark:bg-gray-900 shadow-md">
+    <div class="container mx-auto px-6 py-3 flex items-center justify-between relative">
+
+      <!-- Left: Logo + Email -->
+      <div class="flex items-center gap-4">
+        <img src="aishlogo.webp" alt="Logo" class="w-14 h-14 object-contain">
+        <a href="mailto:ayeshabibiayesha8900@gmail.com"
+           class="hidden sm:block text-sm text-gray-700 dark:text-gray-300 hover:text-blue-500">
+          ayeshabibiayesha8900@gmail.com
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="menuBtn" class="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:block">
+        <ul class="flex items-center space-x-6 text-gray-700 dark:text-gray-300 font-medium">
+          <li><a href="#services" class="hover:text-blue-500">Services</a></li>
+          <li><a href="#portfolio" class="hover:text-blue-500">Portfolio</a></li>
+          <li><a href="#experience" class="hover:text-blue-500">Experience</a></li>
+          <li><a href="#skills" class="hover:text-blue-500">Skills</a></li>
+          <li><a href="#testimonials" class="hover:text-blue-500">Testimonials</a></li>
+          <li><a href="#resume" class="hover:text-blue-500">Resume</a></li>
+          <li><a href="#works" class="hover:text-blue-500">Works</a></li>
+          <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+          <li><a href="#blogs" class="hover:text-blue-500">Blogs</a></li>
+          <li>
+            <a href="#contact"
+               class="border border-purple-600 text-purple-700 dark:text-purple-300 px-3 py-2 rounded-md hover:bg-purple-700 hover:text-white transition">
+              Hire Me
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile dropdown -->
+      <nav id="mobileMenu"
+           class="absolute left-0 right-0 top-full md:hidden bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-lg overflow-hidden max-h-0 opacity-0 pointer-events-none transition-all duration-300">
+        <ul class="flex flex-col text-gray-800 dark:text-gray-200 font-medium px-6 py-3 space-y-1">
+          <li><a href="#services" class="block py-2 hover:text-blue-500">Services</a></li>
+          <li><a href="#portfolio" class="block py-2 hover:text-blue-500">Portfolio</a></li>
+          <li><a href="#experience" class="block py-2 hover:text-blue-500">Experience</a></li>
+          <li><a href="#skills" class="block py-2 hover:text-blue-500">Skills</a></li>
+          <li><a href="#testimonials" class="block py-2 hover:text-blue-500">Testimonials</a></li>
+          <li><a href="#resume" class="block py-2 hover:text-blue-500">Resume</a></li>
+          <li><a href="#works" class="block py-2 hover:text-blue-500">Works</a></li>
+          <li><a href="#home" class="block py-2 hover:text-blue-500">Home</a></li>
+          <li><a href="#blogs" class="block py-2 hover:text-blue-500">Blogs</a></li>
+          <li>
+            <a href="#contact"
+               class="block text-center border border-purple-600 text-purple-700 dark:text-purple-300 px-3 py-2 rounded-md hover:bg-purple-700 hover:text-white transition">
+              Hire Me
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- Right Side: Navigation -->
-    <nav>
-      <ul class="flex space-x-6 text-gray-700 dark:text-gray-300 font-medium">
-        <li><a href="#services" class="hover:text-blue-500">Services</a></li>
-        <li><a href="#portfolio" class="hover:text-blue-500">Portfolio</a></li>
-        <li><a href="#experience" class="hover:text-blue-500">Experience</a></li>
-        <li><a href="#skills" class="hover:text-blue-500">Skills</a></li>
-        <li><a href="#testimonials" class="hover:text-blue-500">Testimonials</a></li>
-        <li><a href="#resume" class="hover:text-blue-500">Resume</a></li>
-        <li><a href="#works" class="hover:text-blue-500">Works</a></li>
-        <li><a href="#home" class="hover:text-blue-500">Home</a></li>
-        <li><a href="#blogs" class="hover:text-blue-500">Blogs</a></li>
-        <a href="#contact" class="border border-primary text-primary px-3 py-2 rounded-md hover:bg-[#170C24] transition">Hire Me</a>
-      </ul>
-      
-    </nav>
+  <!-- Push content down so header doesn't cover it -->
 
-  </div>
-</header>
 
-<script>
-  // Toggle mobile menu
-  const menuBtn = document.getElementById('menu-btn');
-  const menu = document.getElementById('menu');
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('menuBtn');
+      const menu = document.getElementById('mobileMenu');
 
-  menuBtn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-</script>
+      function openMenu() {
+        menu.classList.remove('pointer-events-none', 'opacity-0');
+        menu.classList.add('opacity-100');
+        menu.style.maxHeight = menu.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+      function closeMenu() {
+        menu.classList.add('pointer-events-none', 'opacity-0');
+        menu.style.maxHeight = '0px';
+        btn.setAttribute('aria-expanded', 'false');
+      }
+      function isOpen() { return btn.getAttribute('aria-expanded') === 'true'; }
+
+      btn.addEventListener('click', () => (isOpen() ? closeMenu() : openMenu()));
+
+      // Optional: close on link click (mobile)
+      menu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => { if (window.innerWidth < 768) closeMenu(); });
+      });
+
+      // Optional: close on outside click
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('header') && isOpen()) closeMenu();
+      });
+
+      // Keep things tidy on resize
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) closeMenu();
+      });
+    });
+  </script>
 
   <button id="theme-toggle" 
         class="fixed top-20 right-2 px-4 py-2 rounded bg-gray-800 text-white shadow text-xl z-50">
@@ -1097,5 +1160,6 @@
     
 </body>
 </html>
+
 
 
